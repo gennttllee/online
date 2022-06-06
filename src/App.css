@@ -110,7 +110,7 @@
 
 @media screen  and (max-width : 800px){
     .button-container{
-        width: 45%;
+        width: 40%;
     }
 
     .flex{
@@ -118,7 +118,6 @@
     }
 
     .row{
-        width: 55%;
         text-align: center;
         margin: 0 auto;
     }
@@ -129,10 +128,15 @@
 
     .love{
         transform: scale(1);
+        padding: 3px;
     }
 
     .btn1{
         font-size: 1rem;
+    }
+
+    .icon{
+        margin:0 8px;
     }
 
 
