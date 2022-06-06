@@ -71,8 +71,6 @@
 @media screen  and (max-width : 600px){
     .card{
         width: 200px;
-        display: block;
-        margin: 1rem auto;
     }
 
     .first{
