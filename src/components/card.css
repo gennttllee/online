@@ -1,0 +1,85 @@
+.card {
+    width: 258px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 5px;
+    position: relative;
+    margin: 1.5rem 1rem;
+}
+
+.btn2 {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    border: none;
+    background-color:  #919191;
+    border-radius: 10px;
+}
+
+.added {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.lover{
+   color: white;
+}
+
+.lover1{
+    color: red;
+}
+
+.first {
+    width: 248px;
+    height: 159px;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.image {
+    width: 70px;
+    height: 65px;
+    display: block;
+    margin: -2rem 0 0 1rem;
+    border-radius: 100%;
+    outline: 5px solid white;
+}
+
+.text {
+    text-align: left;
+    margin: .7rem 0 0 1rem;
+}
+
+.p {
+    text-align: left;
+    margin: 0 0 1rem 1rem;
+}
+
+.hire {
+    position: absolute;
+    bottom: 10px;
+    right: 1rem;
+    font-size: larger;
+    color:#1D9BF0;;
+}
+
+@media screen  and (max-width : 600px){
+    .card{
+        width: 200px;
+        display: block;
+        margin: 1rem auto;
+    }
+
+    .first{
+        width: 190px;
+    }
+
+    .h1{
+        font-size: 1.4rem;
+    }
+}
