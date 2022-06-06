@@ -70,11 +70,15 @@
 
 @media screen  and (max-width : 600px){
     .card{
-        width: 200px;
+        width: 80%;
     }
 
     .first{
-        width: 190px;
+        width: 99%;
     }
 
+    .h1{
+        font-size: 1.4rem;
+        margin: 2rem 0 0;
+    }
 }

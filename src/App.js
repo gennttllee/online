@@ -156,7 +156,7 @@ function App() {
               </tr>
             </table>}
           </button>
-          {currency.map(unit => <div onClick={() => clickMe(unit)} key={unit.id}>
+          {currency.map(unit => <div className='div' onClick={() => clickMe(unit)} key={unit.id}>
             <ul className={show ? 'li' : 'hide'}> <img className='listImage' src={unit.flag_url} alt='flag' /> {unit.name}</ul>
           </div>)}
         </div>}
