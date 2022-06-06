@@ -8,10 +8,6 @@
     margin: 1.5rem 1rem;
 }
 
-.app{
-    width: 100%;
-}
-
 .btn2 {
     position: absolute;
     top: 1.4rem;
@@ -75,10 +71,6 @@
 @media screen  and (max-width : 600px){
     .card{
         width: 200px;
-    }
-
-    .app{
-        width: 100%;
     }
 
     .first{
