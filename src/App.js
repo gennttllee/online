@@ -49,10 +49,9 @@ function App() {
     setBother(false)
   }
 
-  const favourites = () => {
+  const favourites =() => {
     setSelect(state.cart.cartItems)
     setBother(true)
-
   }
 
   const added = (index, item) => {
@@ -71,11 +70,9 @@ function App() {
     }
   }
 
-  const clickMe = (unit) => {
-    setLoading(true)
-    setSelectBox(unit)
-    setShow(!show)
-    for (const item of select) {
+  const currencyConverter = (unit) => {
+    dispatch({ type: 'CART_UPDATE_CURRENCY', payload: {unit, currency} })
+    for (const item of data) {
       const converter = currency.filter(product => {
         return product.short === item._source.currency_name
       })
@@ -87,14 +84,20 @@ function App() {
         item._source.starting_from = Math.floor(figureMe)
       }
     }
-    for (const item of select) {
+    for (const item of data) {
       item._source.currency_name = unit.short
+    }
   }
+
+  const clickMe = (unit) => {
+    setLoading(true)
+    setSelectBox(unit)
+    setShow(!show)
+    currencyConverter(unit);
     setLoading(false)
   }
 
   const visible = () => {
-    setSelectBox()
     setShow(!show)
   }
 
