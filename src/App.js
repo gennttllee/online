@@ -49,7 +49,7 @@ function App() {
     setBother(false)
   }
 
-  const favourites =() => {
+  const favourites = () => {
     setSelect(state.cart.cartItems)
     setBother(true)
   }
@@ -71,7 +71,7 @@ function App() {
   }
 
   const currencyConverter = (unit) => {
-    dispatch({ type: 'CART_UPDATE_CURRENCY', payload: {unit, currency} })
+      dispatch({ type: 'CART_UPDATE_CURRENCY', payload: { unit, currency } })
     for (const item of data) {
       const converter = currency.filter(product => {
         return product.short === item._source.currency_name

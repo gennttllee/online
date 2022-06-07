@@ -24,25 +24,26 @@ function reducer(state, action) {
         }
         case 'CART_UPDATE_CURRENCY': {
             const inputs = action.payload;
-            console.log(inputs)
-            if (inputs.unit.short !== state.cart.cartItems[0]._source.currency_name) {
-                for (const element of state.cart.cartItems) {
-                    const converter = inputs.currency.filter(product => {
-                        return product.short === element._source.currency_name
-                    })
-                    if (converter[0].divider > inputs.unit.divider) {
-                        const figure = element._source.starting_from * converter[0].divider
-                        element._source.starting_from = Math.floor(figure)
-                    } else if (converter[0].divider < inputs.unit.divider) {
-                        const figureMe = element._source.starting_from / inputs.unit.divider
-                        element._source.starting_from = Math.floor(figureMe)
+            if (state.cart.cartItems.length > 0) {
+                if (inputs.unit.short !== state.cart.cartItems[0]._source.currency_name) {
+                    for (const element of state.cart.cartItems) {
+                        const converter = inputs.currency.filter(product => {
+                            return product.short === element._source.currency_name
+                        })
+                        if (converter[0].divider > inputs.unit.divider) {
+                            const figure = element._source.starting_from * converter[0].divider
+                            element._source.starting_from = Math.floor(figure)
+                        } else if (converter[0].divider < inputs.unit.divider) {
+                            const figureMe = element._source.starting_from / inputs.unit.divider
+                            element._source.starting_from = Math.floor(figureMe)
+                        }
+                    }
+                    for (const item of state.cart.cartItems) {
+                        item._source.currency_name = inputs.unit.short
                     }
                 }
-                for (const item of state.cart.cartItems) {
-                    item._source.currency_name = inputs.unit.short
-                }
+                localStorage.setItem('myCart', JSON.stringify(state.cart.cartItems))
             }
-            localStorage.setItem('myCart', JSON.stringify(state.cart.cartItems))
             return { ...state };
         }
         default: return state;
