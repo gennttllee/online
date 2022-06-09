@@ -71,7 +71,7 @@ function App() {
   }
 
   const currencyConverter = (unit) => {
-      dispatch({ type: 'CART_UPDATE_CURRENCY', payload: { unit, currency } })
+    dispatch({ type: 'CART_UPDATE_CURRENCY', payload: { unit, currency } })
     for (const item of data) {
       const converter = currency.filter(product => {
         return product.short === item._source.currency_name
@@ -102,67 +102,72 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <div className='button-container'>
-        <h1 className='dev'>Dev<span className='span'>Hire</span></h1>
-        <button onClick={toggle} className={bother ? 'btn1' : 'btn'}>  <span className={bother ? `material-symbols-outlined love` : `material-symbols-outlined icon`}>
-          search
-        </span> Home</button>
-        <button onClick={favourites} className={bother ? 'btn' : 'btn1'}> <span className={bother ? `material-symbols-outlined icon` : `material-symbols-outlined love`}>
-          favorite
-        </span>favorites</button>
-      </div>
-      <div className='flex'>
-        <h1 className='h1'>Hire Top Developers</h1>
-        <div className='row'>
-          {select ?
-            select === data ? select.map((item, index) => <Card
-              key={index}
-              class={check.includes(item._source.profile_id) ? 'added' : 'btn2'}
-              click={() => added(index, item)}
-              icon={check.includes(item._source.profile_id) ? 'lover1' : 'lover'}
-              image={item._source.service_photo}
-              avatar={item._source.avatar}
-              text={item._source.url_name}
-              currency={item._source.currency_name}
-              figure={item._source.starting_from}
-              hire='hire'
-            />) : state.cart.cartItems.length > 0 ? select.map((item, index) => <Card
-              key={index}
-              class={check.includes(item._source.profile_id) ? 'added' : 'btn2'}
-              click={() => added(index, item)}
-              icon={check.includes(item._source.profile_id) ? 'lover1' : 'lover'}
-              image={item._source.service_photo}
-              avatar={item._source.avatar}
-              text={item._source.url_name}
-              currency={item._source.currency_name}
-              figure={item._source.starting_from}
-              hire='hire'
-            />) : <h1>No favorites added</h1>
-            : <h1>loading...</h1>}
+    <div >
+      <div className='app'>
+        <div className='button-container'>
+          <h1 className='dev'>Dev<span className='span'>Hire</span></h1>
+          <button onClick={toggle} className={bother ? 'btn1' : 'btn'}>  <span className={bother ? `material-symbols-outlined love` : `material-symbols-outlined icon`}>
+            search
+          </span> Home</button>
+          <button onClick={favourites} className={bother ? 'btn' : 'btn1'}> <span className={bother ? `material-symbols-outlined icon` : `material-symbols-outlined love`}>
+            favorite
+          </span>favorites</button>
         </div>
-        {currency && <div onMouseLeave={() => setShow(false)} className='ul'>
-          <button onMouseEnter={() => setShow(true)} className='drop' onClick={visible}>
-            {loading ? <h3>loading...</h3> : <table>
-              <tr>
-                <td>
-                  <img className='dropImage' src={selectBox ? selectBox.flag_url : currency[0].flag_url} alt='flag' />
-                </td>
-                <td ref={myRef}>
-                  {selectBox ? selectBox.name : currency[0].name}
-                </td>
-                <td className='menu'>
-                  <span class="material-symbols-outlined">
-                    arrow_drop_down
-                  </span>
-                </td>
-              </tr>
-            </table>}
-          </button>
-          {currency.map(unit => <div className='div' onClick={() => clickMe(unit)} key={unit.id}>
-            <ul className={show ? 'li' : 'hide'}> <img className='listImage' src={unit.flag_url} alt='flag' /> {unit.name}</ul>
-          </div>)}
-        </div>}
+        <div className='flex'>
+          <h1 className='h1'>Hire Top Developers</h1>
+          <div className='row'>
+            {select ?
+              select === data ? select.map((item, index) => <Card
+                key={index}
+                class={check.includes(item._source.profile_id) ? 'added' : 'btn2'}
+                click={() => added(index, item)}
+                icon={check.includes(item._source.profile_id) ? 'lover1' : 'lover'}
+                image={item._source.service_photo}
+                avatar={item._source.avatar}
+                text={item._source.url_name}
+                currency={item._source.currency_name}
+                figure={item._source.starting_from}
+                hire='hire'
+              />) : state.cart.cartItems.length > 0 ? select.map((item, index) => <Card
+                key={index}
+                class={check.includes(item._source.profile_id) ? 'added' : 'btn2'}
+                click={() => added(index, item)}
+                icon={check.includes(item._source.profile_id) ? 'lover1' : 'lover'}
+                image={item._source.service_photo}
+                avatar={item._source.avatar}
+                text={item._source.url_name}
+                currency={item._source.currency_name}
+                figure={item._source.starting_from}
+                hire='hire'
+              />) : <h1>No favorites added</h1>
+              : <h1>loading...</h1>}
+          </div>
+          {currency && <div onMouseLeave={() => setShow(false)} className='ul'>
+            <button onMouseEnter={() => setShow(true)} className='drop' onClick={visible}>
+              {loading ? <h3>loading...</h3> : <table>
+                <tr>
+                  <td>
+                    <img className='dropImage' src={selectBox ? selectBox.flag_url : currency[0].flag_url} alt='flag' />
+                  </td>
+                  <td ref={myRef}>
+                    {selectBox ? selectBox.name : currency[0].name}
+                  </td>
+                  <td className='menu'>
+                    <span class="material-symbols-outlined">
+                      arrow_drop_down
+                    </span>
+                  </td>
+                </tr>
+              </table>}
+            </button>
+            {currency.map(unit => <div className='div' onClick={() => clickMe(unit)} key={unit.id}>
+              <ul className={show ? 'li' : 'hide'}> <img className='listImage' src={unit.flag_url} alt='flag' /> {unit.name}</ul>
+            </div>)}
+          </div>}
+        </div>
+      </div>
+      <div className='footer'>
+        <p>About the developer <a target='blank' href='https://www.mwprofile.com/'> click here</a></p>
       </div>
     </div>
   );

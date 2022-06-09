@@ -115,6 +115,11 @@
     right: 5px;
 }
 
+.footer{
+    text-align: center;
+    margin: 1rem auto ;
+}
+
 @media screen  and (max-width : 800px){
     .button-container{
         width: 100%;
