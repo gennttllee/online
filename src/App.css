@@ -1,6 +1,60 @@
-.app {
+
+.favor{
+    display: block;
+    width: 12rem;
+    height: 3rem;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.home{
+    margin: 1rem 0;
+    display: block;
+    width: 12rem;
+    height: 3rem;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.lover1{
+    color: red;
+    font-size: 1.3rem;
+}
+
+
+.lover2{
+    color: black;
+    font-size: 1.3rem;
+}
+
+.mainDiv {
     display: flex;
-    overflow-x: hidden;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+}
+
+.abs {
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+}
+
+.nav {
+    height: 100%;
+    padding: 1rem;
+}
+
+.glory {
+    width: 80%;
 }
 
 .button-container {
@@ -12,28 +66,28 @@
     text-align: center;
 }
 
-.dev{
-    margin: 1rem 0 4rem;
+.dev {
+    margin: 1rem 0 5rem;
+    font-size: 3rem;
 }
 
 .span {
     color: #1D9BF0;
 }
 
-
 .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    grid-gap: 2rem;
 }
 
 .flex {
-    width: 80%;
+    width: fit-content;
+    margin: 1rem 0;
 }
 
 .h1 {
-    margin: 8.7rem 1rem 1rem;
+    margin: 3rem 1rem 2rem;
 }
 
 .btn {
@@ -46,129 +100,157 @@
     width: 100%;
 }
 
-.icon{
+.icon {
     background-color: #1D9BF0;
     color: white;
-    padding:5px;
+    padding: 5px;
     margin: 0 5%;
 }
 
-.love{
+.love {
     transform: scale(1);
     margin: 0 5%;
 }
 
-.btn1{
+.btn1 {
     display: block;
-    margin: 1rem 0 1rem -1rem ;
+    margin: 1rem 0 1rem -1rem;
     border: none;
     background-color: transparent;
     font-size: 1.2rem;
     width: 100%;
 }
 
-.ul{
+.ul {
     width: fit-content;
     display: block;
-    margin: 2rem 1rem ;
-   float: right;
+    margin: 2rem 1rem 0;
 }
 
-.li{
+.li {
     height: 2rem;
-    padding: 5px 0 0 5px ;
+    padding: 5px 0 0 5px;
     margin: 0;
     list-style: none;
 }
 
-.listImage{
+.listImage {
     float: left;
     height: 1.3rem;
     margin: 0 1rem 0 0;
 }
 
-.div{
+.div {
     text-align: left;
 }
 
-.li:hover{
+.li:hover {
     background-color: #1D9BF0;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.drop{
-  width: 15rem;
-  background-color: transparent;
-  position: relative;
+.drop {
+    width: 15rem;
+    background-color: transparent;
 }
 
-.dropImage{
-   height: 1.3rem;
-   margin: 0 1rem 0 0;
+.dropImage {
+    height: 1.3rem;
+    margin: 0 1rem 0 0;
 }
 
-.menu{
-    position: absolute;
+.table {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
     right: 5px;
 }
 
-.footer{
+.footer {
     text-align: center;
-    margin: 1rem auto ;
+    margin: 1rem auto;
 }
 
-@media screen  and (max-width : 800px){
-    .button-container{
+@media screen and (max-width : 800px) {
+    .button-container {
         width: 100%;
-        border-width: 0 0  2px;
+        border-width: 0 0 2px;
         border-style: solid;
         border-color: rgba(0, 0, 0, 0.2)
     }
 
-    .flex{
+    .nav{
+        padding: 0 1rem;
+        width: 100%;
+    }
+
+    .h1{
+      padding: 0 1rem;
+    }
+
+    .dev{
+        text-align: center;
+        display: block;
+        margin: 1rem auto 1rem;
+    }
+
+    .home{
+        margin-top: 3rem;
+    }
+
+    .mainDiv{
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .flex {
         text-align: center;
     }
 
-    .app{
+    .app {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .row{
+    .row {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .btn{
+    .btn {
         font-size: 1.3rem;
     }
 
-    .love{
+    .love {
         transform: scale(1.4);
         margin: 0 10px 0 0;
     }
 
-    .btn1{
+    .btn1 {
         font-size: 1.3rem;
     }
 
-    .icon{
-        margin:0 10px 0 0;
+    .icon {
+        margin: 0 10px 0 0;
         transform: scale(1);
     }
 
-    .h1{
+    .h1 {
         font-size: 1.4rem;
         margin: 2rem 0 0;
     }
 
-    .dev{
+    .dev {
         margin: 2rem 0 0;
         font-size: 2.5rem;
     }
