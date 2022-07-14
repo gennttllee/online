@@ -11,14 +11,14 @@ function Main({ title, children }) {
     const [loading, setLoading] = useState(false)
 
 
+
     const currencyConverter = (unit) => {
-        dispatch({ type: 'CART_UPDATE_CURRENCY', payload: { unit } })
-        dispatch({ type: 'UPDATE_CURRENCY', payload: { unit } })
+        dispatch({ type: 'CART_UPDATE_CURRENCY', payload:  unit  })
+        dispatch({ type: 'UPDATE_CURRENCY', payload:  unit  })
     }
 
     const clickMe = (unit) => {
         dispatch({ type: 'ADD_NAME', payload: unit })
-        console.log(state.name)
         setShow(!show)
         currencyConverter(unit);
         setLoading(false)
@@ -39,7 +39,6 @@ function Main({ title, children }) {
                     <button className="favor">Favorites</button>
                 </Link>
             </nav>
-
             <section className="glory">
                 <h1 className='h1'>Hire Top Developers</h1>
                 <div className='flex'>

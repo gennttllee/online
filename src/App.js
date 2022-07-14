@@ -7,7 +7,7 @@ import Card from './components/Card'
 
 export default function App() {
     const { state, dispatch } = useContext(Store)
-    const [data, setData] = useState()
+
 
     useEffect(() => {
         getData();
@@ -20,7 +20,6 @@ export default function App() {
             const { data: res } = await axios.get('https://api.terawork.com/resources')
             dispatch({ type: 'ADD_ITEMS', payload: response.data.service_search_results.hits })
             dispatch({ type: 'ADD_CURRENCY', payload: res.data.currencies })
-            setData(response.data.service_search_results.hits);
         } catch (error) {
             console.log(error.message)
         }
@@ -41,8 +40,6 @@ export default function App() {
     const added = (index, item) => {
         dispatch({ type: 'ADD_FAVORITES', payload: item })
     }
-
-    console.log('boy')
 
     return (
         <Main>

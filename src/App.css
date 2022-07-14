@@ -27,12 +27,14 @@
 .lover1{
     color: red;
     font-size: 1.3rem;
+    padding: .3rem .2rem;
 }
 
 
 .lover2{
     color: black;
     font-size: 1.3rem;
+    padding: .3rem .2rem;
 }
 
 .mainDiv {

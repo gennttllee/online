@@ -33,21 +33,21 @@ function reducer(state, action) {
         }
         case  'UPDATE_CURRENCY' : {
             const unit = action.payload;
-            if (unit.unit.short !== state.items[0]._source.currency_name) {
+            if (unit.short !== state.items[0]._source.currency_name) {
                 for (const element of state.items) {
                     const converter = state.currency.filter(product => {
                         return product.short === element._source.currency_name
                     })
-                    if (converter[0].divider > unit.unit.divider) {
+                    if (converter[0].divider > unit.divider) {
                         const figure = element._source.starting_from * converter[0].divider
-                        element._source.starting_from = Math.floor(figure)
-                    } else if (converter[0].divider < unit.unit.divider) {
-                        const figureMe = element._source.starting_from / unit.unit.divider
-                        element._source.starting_from = Math.floor(figureMe)
+                        element._source.starting_from = Math.round(figure)
+                    } else if (converter[0].divider < unit.divider) {
+                        const figureMe = element._source.starting_from / unit.divider
+                        element._source.starting_from = Math.round(figureMe)
                     }
                 }
                 for (const item of state.items) {
-                    item._source.currency_name = unit.unit.short
+                    item._source.currency_name = unit.short
                 }
             localStorage.setItem('items', JSON.stringify(state.items))
         }
@@ -56,21 +56,21 @@ function reducer(state, action) {
         case 'CART_UPDATE_CURRENCY': {
             const unit = action.payload;
             if (state.favorites.length > 0){
-                if (unit.unit.short !== state.favorites[0]._source.currency_name) {
+                if (unit.short !== state.favorites[0]._source.currency_name) {
                     for (const element of state.favorites) {
                         const converter = state.currency.filter(product => {
                             return product.short === element._source.currency_name
                         })
-                        if (converter[0].divider > unit.unit.divider) {
+                        if (converter[0].divider > unit.divider) {
                             const figure = element._source.starting_from * converter[0].divider
-                            element._source.starting_from = Math.floor(figure)
-                        } else if (converter[0].divider < unit.unit.divider) {
-                            const figureMe = element._source.starting_from / unit.unit.divider
-                            element._source.starting_from = Math.floor(figureMe)
+                            element._source.starting_from = Math.round(figure)
+                        } else if (converter[0].divider < unit.divider) {
+                            const figureMe = element._source.starting_from / unit.divider
+                            element._source.starting_from = Math.round(figureMe)
                         }
                     }
                     for (const item of state.favorites) {
-                        item._source.currency_name = unit.unit.short
+                        item._source.currency_name = unit.short
                     }
                 localStorage.setItem('favor', JSON.stringify(state.favorites))
             }
